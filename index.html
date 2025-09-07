@@ -34,21 +34,24 @@
 
 
 
-    <div id="overlay" class="text-center">
-      <h1 class="mb-5">Data Users</h1>
-      <i id="home-icon" class=" fa-solid fa-circle-left" onclick="homeButton()"></i>
-      <table class="table table-bordered table-hover table-responsive d-block overflow-auto">
+    <div id="overlay" class="text-center overflow-auto">
+      <div class="position-relative w-100">
+        <h1 class="mb-5">Data Users</h1>
+        <i id="home-icon" class=" fa-solid fa-circle-left" onclick="homeButton()"></i>
+         <td><button class="btn-deleteAll btn btn-danger" onclick=" deleteAll()">Delete All</button></td>
+      </div>
+      <table class="table table-bordered table-hover table-responsive table-group-divider w-100">
         <thead class="table-light">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Address</th>
-            <th scope="col">Update</th>
-            <th colspan="2" scope="col" >Send Update</th>
-            <th scope="col">Delete</th>
+            <th class="Low-space" scope="col">#</th>
+            <th class="test" scope="col">First Name</th>
+            <th class="test" scope="col">Last Name</th>
+            <th class="test" scope="col">Phone</th>
+            <th class="test" scope="col">Email</th>
+            <th class="test" scope="col">Address</th>
+            <th class="btn-Head" scope="col">Update</th>
+            <th class="btn-Head" colspan="2" scope="col">Send Update</th>
+            <th class="btn-Head" scope="col">Delete</th>
           </tr>
         </thead>
         <tbody id="tableForm">

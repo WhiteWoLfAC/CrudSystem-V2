@@ -151,3 +151,8 @@ function btnYes(index) {
     displayTable();
     currentEditIndex = null;
 }
+function deleteAll(){
+    datalist = [];
+    localStorage.setItem("data", JSON.stringify(datalist))
+    displayTable();
+}
