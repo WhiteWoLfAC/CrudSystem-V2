@@ -3,6 +3,7 @@ let lname = document.getElementById("lastName");
 let Phone = document.getElementById("phone");
 let email = document.getElementById("Email");
 let address = document.getElementById("address");
+let search = document.querySelector(".SearchInput");
 let datalist = [];
 currentEditIndex = null;
 if (localStorage.getItem("data") != null) {
@@ -151,8 +152,33 @@ function btnYes(index) {
     displayTable();
     currentEditIndex = null;
 }
-function deleteAll(){
+function deleteAll() {
     datalist = [];
     localStorage.setItem("data", JSON.stringify(datalist))
     displayTable();
+}
+
+function Search() {
+    let searchInput = search.value;
+    let table = "";
+    for (let i = 0; i < datalist.length; i++) {
+        if(datalist[i].fname.toLowerCase().includes(searchInput.toLowerCase()))
+            {
+            
+        table += `<tr>
+           <th scope="row">${i + 1}</th>
+                <td><input id="updateFname-${i}" class="form-control" type="text" disabled value="${datalist[i].fname}"></td>
+                <td><input id="updateLname-${i}" class="form-control" type="text" disabled value="${datalist[i].lname}"></td>
+                <td><input id="updatePhone-${i}" class="form-control" type="text" disabled value="${datalist[i].Phone}"></td>
+                <td><input id="updateEmail-${i}" class="form-control" type="text" disabled value="${datalist[i].email}"></td>
+                <td><input id="updateAddress-${i}" class="form-control" type="text" disabled value="${datalist[i].address}"></td>
+                <td><button class="btn btn-primary" onclick="updateData(${i})">Update</button></td>
+                <td><button id="btnYes-${i}" class="btn btn-danger" disabled onclick="btnYes(${i})">Yes</button></td>
+                <td><button id="btnNo-${i}" class="btn btn-danger" disabled onclick="btnNo(${i})">No</button></td>
+                <td><button class="btn btn-danger" onclick="deleteData(${i})">Delete</button></td>
+            </tr>`
+        }
+
+    }
+    document.getElementById("tableForm").innerHTML = table;
 }

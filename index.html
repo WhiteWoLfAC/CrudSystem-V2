@@ -35,12 +35,11 @@
 
 
     <div id="overlay" class="text-center overflow-auto">
-      <div class="position-relative w-100">
+        <td><button class="btn-deleteAll btn btn-danger" onclick=" deleteAll()">Delete All</button></td>
         <h1 class="mb-5">Data Users</h1>
         <i id="home-icon" class=" fa-solid fa-circle-left" onclick="homeButton()"></i>
-         <td><button class="btn-deleteAll btn btn-danger" onclick=" deleteAll()">Delete All</button></td>
-      </div>
-      <table class="table table-bordered table-hover table-responsive table-group-divider w-100">
+      <input class="SearchInput form-control w-50 mx-auto mb-2" type="text" placeholder="Search.." oninput="Search()">
+        <table class="table table-bordered table-hover table-responsive table-group-divider w-100">
         <thead class="table-light">
           <tr>
             <th class="Low-space" scope="col">#</th>
